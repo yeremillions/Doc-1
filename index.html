@@ -110,97 +110,76 @@
                         </div>
                     </div>
                 </div>
-                <!-- Booking Form -->
+                <!-- Booking Search Form -->
                 <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 lg:p-10">
-                    <div class="flex items-center space-x-3 mb-8">
-                        <div class="w-12 h-12 bg-dark-800 rounded-xl flex items-center justify-center">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-dark-800">Book Appointment</h3>
-                            <p class="text-gray-500 text-sm">Fill in your details below</p>
-                        </div>
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-semibold text-dark-800">Find a Doctor</h3>
+                        <p class="text-gray-500 mt-2">Search for available appointments</p>
                     </div>
 
                     <form class="space-y-5">
-                        <!-- Full Name -->
-                        <div>
-                            <label for="fullName" class="block text-sm font-medium text-dark-800 mb-2">Full Name</label>
-                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
-                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-dark-800 focus:ring-2 focus:ring-dark-800/10 outline-none transition-all text-dark-800 placeholder-gray-400">
+                        <!-- Search Input -->
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                            <input type="text" id="search" name="search" placeholder="Search doctor or specialty..."
+                                class="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 focus:border-dark-800 focus:ring-2 focus:ring-dark-800/10 outline-none transition-all text-dark-800 placeholder-gray-400">
                         </div>
 
-                        <!-- Email & Phone Row -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-dark-800 mb-2">Email</label>
-                                <input type="email" id="email" name="email" placeholder="your@email.com"
-                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-dark-800 focus:ring-2 focus:ring-dark-800/10 outline-none transition-all text-dark-800 placeholder-gray-400">
+                        <!-- Location -->
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
                             </div>
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-dark-800 mb-2">Phone</label>
-                                <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890"
-                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-dark-800 focus:ring-2 focus:ring-dark-800/10 outline-none transition-all text-dark-800 placeholder-gray-400">
-                            </div>
-                        </div>
-
-                        <!-- Department -->
-                        <div>
-                            <label for="department" class="block text-sm font-medium text-dark-800 mb-2">Department</label>
-                            <select id="department" name="department"
-                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-dark-800 focus:ring-2 focus:ring-dark-800/10 outline-none transition-all text-dark-800 bg-white appearance-none cursor-pointer"
+                            <select id="location" name="location"
+                                class="w-full pl-12 pr-10 py-4 rounded-xl border border-gray-200 focus:border-dark-800 focus:ring-2 focus:ring-dark-800/10 outline-none transition-all text-dark-800 bg-white appearance-none cursor-pointer"
                                 style="background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%236b7280%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1rem;">
-                                <option value="" disabled selected>Select a department</option>
-                                <option value="cardiology">Cardiology</option>
-                                <option value="neurology">Neurology</option>
-                                <option value="ophthalmology">Ophthalmology</option>
-                                <option value="orthopedics">Orthopedics</option>
-                                <option value="dermatology">Dermatology</option>
-                                <option value="pediatrics">Pediatrics</option>
-                                <option value="general">General Medicine</option>
+                                <option value="" disabled selected>Select location</option>
+                                <option value="downtown">Downtown Medical Center</option>
+                                <option value="westside">Westside Clinic</option>
+                                <option value="eastside">Eastside Health Hub</option>
+                                <option value="north">North City Hospital</option>
+                                <option value="south">South Bay Medical</option>
                             </select>
                         </div>
 
-                        <!-- Date & Time Row -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label for="date" class="block text-sm font-medium text-dark-800 mb-2">Preferred Date</label>
-                                <input type="date" id="date" name="date"
-                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-dark-800 focus:ring-2 focus:ring-dark-800/10 outline-none transition-all text-dark-800">
+                        <!-- Date -->
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
                             </div>
-                            <div>
-                                <label for="time" class="block text-sm font-medium text-dark-800 mb-2">Preferred Time</label>
-                                <select id="time" name="time"
-                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-dark-800 focus:ring-2 focus:ring-dark-800/10 outline-none transition-all text-dark-800 bg-white appearance-none cursor-pointer"
-                                    style="background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%236b7280%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1rem;">
-                                    <option value="" disabled selected>Select time</option>
-                                    <option value="09:00">09:00 AM</option>
-                                    <option value="10:00">10:00 AM</option>
-                                    <option value="11:00">11:00 AM</option>
-                                    <option value="12:00">12:00 PM</option>
-                                    <option value="14:00">02:00 PM</option>
-                                    <option value="15:00">03:00 PM</option>
-                                    <option value="16:00">04:00 PM</option>
-                                    <option value="17:00">05:00 PM</option>
-                                </select>
-                            </div>
+                            <input type="date" id="date" name="date"
+                                class="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 focus:border-dark-800 focus:ring-2 focus:ring-dark-800/10 outline-none transition-all text-dark-800">
                         </div>
 
-                        <!-- Submit Button -->
+                        <!-- Search Button -->
                         <button type="submit"
-                            class="w-full bg-dark-800 text-white py-4 rounded-xl font-medium hover:bg-dark-700 transition-colors mt-6 flex items-center justify-center space-x-2">
-                            <span>Book Appointment</span>
+                            class="w-full bg-dark-800 text-white py-4 rounded-xl font-medium hover:bg-dark-700 transition-colors flex items-center justify-center space-x-2">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
+                            <span>Search Appointments</span>
                         </button>
                     </form>
 
-                    <p class="text-center text-gray-500 text-sm mt-6">
-                        By booking, you agree to our <a href="#" class="text-dark-800 hover:underline">Terms</a> and <a href="#" class="text-dark-800 hover:underline">Privacy Policy</a>
-                    </p>
+                    <!-- Quick Links -->
+                    <div class="mt-8 pt-6 border-t border-gray-100">
+                        <p class="text-sm text-gray-500 text-center mb-4">Popular Specialties</p>
+                        <div class="flex flex-wrap gap-2 justify-center">
+                            <a href="#" class="px-4 py-2 bg-gray-100 text-dark-800 text-sm rounded-full hover:bg-dark-800 hover:text-white transition-colors">Cardiology</a>
+                            <a href="#" class="px-4 py-2 bg-gray-100 text-dark-800 text-sm rounded-full hover:bg-dark-800 hover:text-white transition-colors">Neurology</a>
+                            <a href="#" class="px-4 py-2 bg-gray-100 text-dark-800 text-sm rounded-full hover:bg-dark-800 hover:text-white transition-colors">Pediatrics</a>
+                            <a href="#" class="px-4 py-2 bg-gray-100 text-dark-800 text-sm rounded-full hover:bg-dark-800 hover:text-white transition-colors">Dermatology</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
