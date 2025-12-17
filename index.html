@@ -87,11 +87,31 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden p-2">
-                    <svg class="w-6 h-6 text-dark-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button class="md:hidden p-2" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <svg class="w-6 h-6 text-dark-800" id="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
+                    <svg class="w-6 h-6 text-dark-800 hidden" id="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
                 </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white border-t border-gray-100" id="mobile-menu">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#" class="block text-dark-800 font-medium py-2">Home</a>
+                <a href="#services" class="block text-gray-500 hover:text-dark-800 py-2">Services</a>
+                <a href="#doctors" class="block text-gray-500 hover:text-dark-800 py-2">Doctors</a>
+                <a href="#testimonials" class="block text-gray-500 hover:text-dark-800 py-2">Testimonials</a>
+                <a href="#contact" class="block text-gray-500 hover:text-dark-800 py-2">Contact</a>
+                <div class="pt-4 border-t border-gray-100 space-y-3">
+                    <a href="#" class="block text-dark-800 font-medium py-2">Sign In</a>
+                    <a href="#" class="block bg-primary text-white px-6 py-3 rounded-lg font-medium text-center hover:bg-primary-hover transition-colors">
+                        Book Appointment
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -135,8 +155,30 @@
                 </div>
             </div>
 
+            <!-- Trust Badges -->
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+                <div class="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                    <svg class="w-5 h-5 text-teal-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-white text-sm font-medium">HIPAA Compliant</span>
+                </div>
+                <div class="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                    <svg class="w-5 h-5 text-teal-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                    <span class="text-white text-sm font-medium">4.9 Rating</span>
+                </div>
+                <div class="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                    <svg class="w-5 h-5 text-teal-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-white text-sm font-medium">Verified Doctors</span>
+                </div>
+            </div>
+
             <!-- Stats -->
-            <div class="mt-16 flex items-center justify-center space-x-8 lg:space-x-16">
+            <div class="mt-12 flex items-center justify-center space-x-8 lg:space-x-16">
                 <div>
                     <p class="text-3xl font-bold text-white">500+</p>
                     <p class="text-gray-300 text-sm">Expert Doctors</p>
@@ -208,6 +250,40 @@
         </div>
     </section>
 
+    <!-- Trust Partners Section -->
+    <section class="py-12 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <p class="text-center text-gray-500 text-sm mb-8">Trusted by leading healthcare organizations</p>
+            <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-60">
+                <!-- Partner Logo 1 -->
+                <div class="flex items-center space-x-2 text-gray-400">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"></path></svg>
+                    <span class="font-semibold">MedCare</span>
+                </div>
+                <!-- Partner Logo 2 -->
+                <div class="flex items-center space-x-2 text-gray-400">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M10.5 13H8v-3h2.5V7.5h3V10H16v3h-2.5v2.5h-3V13zM12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"></path></svg>
+                    <span class="font-semibold">HealthShield</span>
+                </div>
+                <!-- Partner Logo 3 -->
+                <div class="flex items-center space-x-2 text-gray-400">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+                    <span class="font-semibold">CareFirst</span>
+                </div>
+                <!-- Partner Logo 4 -->
+                <div class="flex items-center space-x-2 text-gray-400">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                    <span class="font-semibold">HeartCare</span>
+                </div>
+                <!-- Partner Logo 5 -->
+                <div class="flex items-center space-x-2 text-gray-400">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"></path></svg>
+                    <span class="font-semibold">MediPlus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- How It Works Section -->
     <section class="py-20">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -215,22 +291,25 @@
                 <h2 class="text-3xl lg:text-4xl font-bold text-dark-800">How It Works</h2>
                 <p class="mt-4 text-gray-500">Book your appointment in three simple steps. It's quick, easy, and hassle-free.</p>
             </div>
-            <div class="mt-16 grid md:grid-cols-3 gap-12">
+            <div class="mt-16 grid md:grid-cols-3 gap-12 relative">
+                <!-- Connecting Lines (hidden on mobile) -->
+                <div class="hidden md:block absolute top-8 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-teal-200 via-teal-400 to-teal-200"></div>
+
                 <!-- Step 1 -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto">1</div>
+                <div class="text-center relative z-10">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto shadow-lg shadow-teal-500/30">1</div>
                     <h3 class="mt-6 text-xl font-semibold text-dark-800">Search Doctor</h3>
                     <p class="mt-3 text-gray-500">Browse our network of qualified healthcare professionals by specialty or location.</p>
                 </div>
                 <!-- Step 2 -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto">2</div>
+                <div class="text-center relative z-10">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto shadow-lg shadow-teal-500/30">2</div>
                     <h3 class="mt-6 text-xl font-semibold text-dark-800">Select Time</h3>
                     <p class="mt-3 text-gray-500">Choose a convenient appointment slot that fits your schedule.</p>
                 </div>
                 <!-- Step 3 -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto">3</div>
+                <div class="text-center relative z-10">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto shadow-lg shadow-teal-500/30">3</div>
                     <h3 class="mt-6 text-xl font-semibold text-dark-800">Get Care</h3>
                     <p class="mt-3 text-gray-500">Visit the doctor at your scheduled time and receive quality healthcare.</p>
                 </div>
@@ -239,48 +318,72 @@
     </section>
 
     <!-- Doctors Section -->
-    <section id="doctors" class="py-20 bg-dark-700">
+    <section id="doctors" class="py-20 bg-primary-dark">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto">
                 <h2 class="text-3xl lg:text-4xl font-bold text-white">Meet Our Doctors</h2>
-                <p class="mt-4 text-gray-400">Experienced healthcare professionals dedicated to providing exceptional patient care.</p>
+                <p class="mt-4 text-teal-100">Experienced healthcare professionals dedicated to providing exceptional patient care.</p>
             </div>
             <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Doctor Card 1 -->
-                <div class="bg-dark-600 rounded-2xl p-6 text-center hover:bg-dark-400 transition-colors">
-                    <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=200&h=200&fit=crop&crop=face" alt="Dr. Sarah Johnson" class="w-24 h-24 rounded-full mx-auto object-cover">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 hover:bg-white/20 transition-all relative">
+                    <span class="absolute top-4 right-4 bg-green-500 text-white text-xs px-2 py-1 rounded-full font-medium">Available Today</span>
+                    <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=200&h=200&fit=crop&crop=face" alt="Dr. Sarah Johnson" class="w-24 h-24 rounded-full mx-auto object-cover ring-4 ring-white/30">
                     <h3 class="mt-4 text-lg font-semibold text-white">Dr. Sarah Johnson</h3>
-                    <p class="text-gray-400 text-sm">Cardiologist</p>
-                    <p class="mt-2 text-gray-500 text-sm">15 years experience</p>
-                    <a href="#" class="mt-4 inline-block text-white text-sm font-medium hover:underline">Book Appointment</a>
+                    <p class="text-teal-200 text-sm">Cardiologist</p>
+                    <div class="mt-2 flex items-center justify-center space-x-1">
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <span class="text-white text-sm">4.9</span>
+                        <span class="text-teal-300 text-sm">(124 reviews)</span>
+                    </div>
+                    <p class="mt-1 text-teal-300 text-sm">15 years experience</p>
+                    <a href="#" class="mt-4 inline-block bg-white text-primary-dark px-4 py-2 rounded-lg text-sm font-medium hover:bg-teal-50 transition-colors">Book Appointment</a>
                 </div>
                 <!-- Doctor Card 2 -->
-                <div class="bg-dark-600 rounded-2xl p-6 text-center hover:bg-dark-400 transition-colors">
-                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=200&h=200&fit=crop&crop=face" alt="Dr. Michael Chen" class="w-24 h-24 rounded-full mx-auto object-cover">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 hover:bg-white/20 transition-all relative">
+                    <span class="absolute top-4 right-4 bg-yellow-500 text-white text-xs px-2 py-1 rounded-full font-medium">Next: Tomorrow</span>
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=200&h=200&fit=crop&crop=face" alt="Dr. Michael Chen" class="w-24 h-24 rounded-full mx-auto object-cover ring-4 ring-white/30">
                     <h3 class="mt-4 text-lg font-semibold text-white">Dr. Michael Chen</h3>
-                    <p class="text-gray-400 text-sm">Neurologist</p>
-                    <p class="mt-2 text-gray-500 text-sm">12 years experience</p>
-                    <a href="#" class="mt-4 inline-block text-white text-sm font-medium hover:underline">Book Appointment</a>
+                    <p class="text-teal-200 text-sm">Neurologist</p>
+                    <div class="mt-2 flex items-center justify-center space-x-1">
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <span class="text-white text-sm">4.8</span>
+                        <span class="text-teal-300 text-sm">(98 reviews)</span>
+                    </div>
+                    <p class="mt-1 text-teal-300 text-sm">12 years experience</p>
+                    <a href="#" class="mt-4 inline-block bg-white text-primary-dark px-4 py-2 rounded-lg text-sm font-medium hover:bg-teal-50 transition-colors">Book Appointment</a>
                 </div>
                 <!-- Doctor Card 3 -->
-                <div class="bg-dark-600 rounded-2xl p-6 text-center hover:bg-dark-400 transition-colors">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=face" alt="Dr. Emily Davis" class="w-24 h-24 rounded-full mx-auto object-cover">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 hover:bg-white/20 transition-all relative">
+                    <span class="absolute top-4 right-4 bg-green-500 text-white text-xs px-2 py-1 rounded-full font-medium">Available Today</span>
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=face" alt="Dr. Emily Davis" class="w-24 h-24 rounded-full mx-auto object-cover ring-4 ring-white/30">
                     <h3 class="mt-4 text-lg font-semibold text-white">Dr. Emily Davis</h3>
-                    <p class="text-gray-400 text-sm">Ophthalmologist</p>
-                    <p class="mt-2 text-gray-500 text-sm">10 years experience</p>
-                    <a href="#" class="mt-4 inline-block text-white text-sm font-medium hover:underline">Book Appointment</a>
+                    <p class="text-teal-200 text-sm">Ophthalmologist</p>
+                    <div class="mt-2 flex items-center justify-center space-x-1">
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <span class="text-white text-sm">5.0</span>
+                        <span class="text-teal-300 text-sm">(156 reviews)</span>
+                    </div>
+                    <p class="mt-1 text-teal-300 text-sm">10 years experience</p>
+                    <a href="#" class="mt-4 inline-block bg-white text-primary-dark px-4 py-2 rounded-lg text-sm font-medium hover:bg-teal-50 transition-colors">Book Appointment</a>
                 </div>
                 <!-- Doctor Card 4 -->
-                <div class="bg-dark-600 rounded-2xl p-6 text-center hover:bg-dark-400 transition-colors">
-                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=200&h=200&fit=crop&crop=face" alt="Dr. James Wilson" class="w-24 h-24 rounded-full mx-auto object-cover">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 hover:bg-white/20 transition-all relative">
+                    <span class="absolute top-4 right-4 bg-green-500 text-white text-xs px-2 py-1 rounded-full font-medium">Available Today</span>
+                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=200&h=200&fit=crop&crop=face" alt="Dr. James Wilson" class="w-24 h-24 rounded-full mx-auto object-cover ring-4 ring-white/30">
                     <h3 class="mt-4 text-lg font-semibold text-white">Dr. James Wilson</h3>
-                    <p class="text-gray-400 text-sm">Orthopedic Surgeon</p>
-                    <p class="mt-2 text-gray-500 text-sm">18 years experience</p>
-                    <a href="#" class="mt-4 inline-block text-white text-sm font-medium hover:underline">Book Appointment</a>
+                    <p class="text-teal-200 text-sm">Orthopedic Surgeon</p>
+                    <div class="mt-2 flex items-center justify-center space-x-1">
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <span class="text-white text-sm">4.7</span>
+                        <span class="text-teal-300 text-sm">(89 reviews)</span>
+                    </div>
+                    <p class="mt-1 text-teal-300 text-sm">18 years experience</p>
+                    <a href="#" class="mt-4 inline-block bg-white text-primary-dark px-4 py-2 rounded-lg text-sm font-medium hover:bg-teal-50 transition-colors">Book Appointment</a>
                 </div>
             </div>
             <div class="mt-12 text-center">
-                <a href="#" class="inline-block border-2 border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-dark-800 transition-colors">
+                <a href="#" class="inline-block border-2 border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-primary-dark transition-colors">
                     View All Doctors
                 </a>
             </div>
@@ -353,6 +456,78 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-dark-800">Frequently Asked Questions</h2>
+                <p class="mt-4 text-gray-500">Find answers to common questions about our services.</p>
+            </div>
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <details class="group bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <span class="font-semibold text-dark-800">How do I book an appointment?</span>
+                        <svg class="w-5 h-5 text-primary transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600">
+                        Simply search for a doctor by specialty or name, select an available time slot that works for you, and confirm your booking. You'll receive an email confirmation with all the details.
+                    </div>
+                </details>
+                <!-- FAQ Item 2 -->
+                <details class="group bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <span class="font-semibold text-dark-800">Can I cancel or reschedule my appointment?</span>
+                        <svg class="w-5 h-5 text-primary transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600">
+                        Yes, you can cancel or reschedule appointments up to 24 hours before your scheduled time through your patient portal or by contacting our support team.
+                    </div>
+                </details>
+                <!-- FAQ Item 3 -->
+                <details class="group bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <span class="font-semibold text-dark-800">What insurance plans do you accept?</span>
+                        <svg class="w-5 h-5 text-primary transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600">
+                        We accept most major insurance plans including Medicare, Medicaid, and private insurance. Each doctor's profile shows the specific plans they accept.
+                    </div>
+                </details>
+                <!-- FAQ Item 4 -->
+                <details class="group bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <span class="font-semibold text-dark-800">Is my medical information secure?</span>
+                        <svg class="w-5 h-5 text-primary transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600">
+                        Absolutely. We are fully HIPAA compliant and use industry-standard encryption to protect your personal and medical information. Your privacy is our top priority.
+                    </div>
+                </details>
+                <!-- FAQ Item 5 -->
+                <details class="group bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <span class="font-semibold text-dark-800">Do you offer telemedicine appointments?</span>
+                        <svg class="w-5 h-5 text-primary transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600">
+                        Yes, many of our doctors offer virtual consultations. Look for the "Video Visit" option when booking to schedule a telemedicine appointment from the comfort of your home.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-20 bg-primary">
         <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
@@ -366,6 +541,26 @@
                     Contact Us
                 </a>
             </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-teal-50">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+            </div>
+            <h2 class="text-2xl lg:text-3xl font-bold text-dark-800">Stay Updated with Health Tips</h2>
+            <p class="mt-3 text-gray-600 max-w-xl mx-auto">Subscribe to our newsletter for health tips, new doctor announcements, and exclusive offers.</p>
+            <form class="mt-8 flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-5 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-dark-800 placeholder-gray-400">
+                <button type="submit" class="bg-primary text-white px-6 py-3 rounded-xl font-medium hover:bg-primary-hover transition-colors whitespace-nowrap">
+                    Subscribe
+                </button>
+            </form>
+            <p class="mt-4 text-gray-500 text-sm">We respect your privacy. Unsubscribe at any time.</p>
         </div>
     </section>
 
@@ -425,5 +620,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
