@@ -32,7 +32,7 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* Theme Colors */
+        /* Teal Theme Colors */
         :root {
             --primary-900: #0d9488;
             --primary-800: #14b8a6;
@@ -41,18 +41,6 @@
             --primary-500: #99f6e4;
             --primary-hover: #0f766e;
             --primary-light: #ccfbf1;
-            --theme-name: 'teal';
-        }
-
-        [data-theme="blue"] {
-            --primary-900: #1e40af;
-            --primary-800: #2563eb;
-            --primary-700: #3b82f6;
-            --primary-600: #60a5fa;
-            --primary-500: #93c5fd;
-            --primary-hover: #1d4ed8;
-            --primary-light: #dbeafe;
-            --theme-name: 'blue';
         }
 
         .bg-primary { background-color: var(--primary-800); }
@@ -64,44 +52,9 @@
         .hover\:bg-primary-hover:hover { background-color: var(--primary-hover); }
         .focus\:border-primary:focus { border-color: var(--primary-800); }
         .focus\:ring-primary:focus { --tw-ring-color: var(--primary-500); }
-
-        /* Toggle Switch Styles */
-        .theme-toggle {
-            position: relative;
-            width: 70px;
-            height: 32px;
-            background: linear-gradient(to right, #14b8a6, #2563eb);
-            border-radius: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .theme-toggle::before {
-            content: '';
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            width: 26px;
-            height: 26px;
-            background: white;
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        [data-theme="blue"] .theme-toggle::before {
-            transform: translateX(38px);
-        }
-
-        .theme-label {
-            font-size: 10px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
     </style>
 </head>
-<body class="bg-white text-dark-800" data-theme="teal">
+<body class="bg-white text-dark-800">
     <!-- Navigation -->
     <nav class="fixed w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -125,15 +78,8 @@
                     <a href="#contact" class="text-gray-500 hover:text-dark-800 transition-colors">Contact</a>
                 </div>
 
-                <!-- Theme Toggle & CTA Buttons -->
+                <!-- CTA Buttons -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <!-- Theme Toggle -->
-                    <div class="flex items-center space-x-2">
-                        <span class="theme-label text-teal-600" id="teal-label">Teal</span>
-                        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme"></button>
-                        <span class="theme-label text-blue-600" id="blue-label">Blue</span>
-                    </div>
-                    <div class="w-px h-6 bg-gray-300"></div>
                     <a href="#" class="text-dark-800 font-medium hover:text-dark-600 transition-colors">Sign In</a>
                     <a href="#" class="bg-primary text-white px-6 py-2.5 rounded-lg font-medium hover:bg-primary-hover transition-colors">
                         Book Appointment
@@ -479,41 +425,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- Theme Toggle Script -->
-    <script>
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        const tealLabel = document.getElementById('teal-label');
-        const blueLabel = document.getElementById('blue-label');
-
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme') || 'teal';
-        body.setAttribute('data-theme', savedTheme);
-        updateLabels(savedTheme);
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = body.getAttribute('data-theme');
-            const newTheme = currentTheme === 'teal' ? 'blue' : 'teal';
-
-            body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateLabels(newTheme);
-        });
-
-        function updateLabels(theme) {
-            if (theme === 'teal') {
-                tealLabel.classList.add('font-bold');
-                tealLabel.classList.remove('opacity-50');
-                blueLabel.classList.remove('font-bold');
-                blueLabel.classList.add('opacity-50');
-            } else {
-                blueLabel.classList.add('font-bold');
-                blueLabel.classList.remove('opacity-50');
-                tealLabel.classList.remove('font-bold');
-                tealLabel.classList.add('opacity-50');
-            }
-        }
-    </script>
 </body>
 </html>
